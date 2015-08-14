@@ -34,6 +34,22 @@ if($code != '') {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
+
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		        sURLVariables = sPageURL.split('&'),
+		        sParameterName,
+		        i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+		        sParameterName = sURLVariables[i].split('=');
+
+		        if (sParameterName[0] === sParam) {
+		            return sParameterName[1] === undefined ? true : sParameterName[1];
+		        }
+		    }
+		};
+
 		$('body').on('click', '.closeForm', function(){
 			if($('form').hasClass('xHidden')) {
 				$('form').removeClass('xHidden');
@@ -45,6 +61,8 @@ if($code != '') {
 
 		if(typeof NGX != 'undefined') {
 			$('form').addClass('xHidden');
+
+			$('form textarea').val(getUrlParameter('code'));
 
 			$.ajax({
 				url: 'https://api-ssl.bitly.com/v3/shorten',
