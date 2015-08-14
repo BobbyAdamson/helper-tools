@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	display: block;
+	width: 100%;
+}
+
+body * {
+	box-sizing: border-box;
+}
+
+form {
+	position: absolute;
+	background: rgba(0, 0, 0, .9);
+	color:#fff;
+	width: 100%;
+	transition: all .4s ease-in;
+}
+
+form .inner {
+	padding: 10px;
+	display: block;
+	max-width: 100%;
+}
+
+label, textarea, button {
+	display: block;
+	margin-bottom: 10px;
+}
+
+textarea {
+	width: 100%;
+	display: block;
+	border-color: transparent;
+	padding: 10px;
+}
+
+.xHidden {
+	margin-top: -140px;
+}
+
+.xHidden.bitlyLink {
+	margin-top: -195px;
+}
+
+.closeForm {
+	position: absolute;
+	width: 40px;
+	height: 20px;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
+	background: rgba(0, 0, 0, .5);
+	bottom: -20px;
+	left: 50%;
+	margin-left: -20px;
+	font-size: 0;
+	color: #fff;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.closeForm::before {
+	content: 'X';
+	display: block;
+	font-size:10px;
+	width: 100%;
+	text-align: center;
+}
+
+.xHidden .closeForm::before {
+	content: 'v';
+}
+
+button {
+	display: block;
+	width: 100%;
+	background: green;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 0;
+	border: none;
+	font-weight: bold;
+}
+
+textarea, button, input {
+	border-radius: 4px;
+}
+
+input {
+	border: none;
+    padding: 8px;
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.bitlyLink {
+
+}
